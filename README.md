@@ -3,11 +3,11 @@
 *****
 **Run command:**
 
-$ `docker-compose up -d  masterpay` install gem from Gemfile
+$ `docker-compose up -d  masterpay` run container
 
-$ `docker exec -ti masterpay rspec`
+$ `docker exec -ti masterpay rspec` - run all tests
 
-$ `docker exec -ti masterpay rspec -f d`
+$ `docker exec -ti masterpay rspec -f d`  - run all tests format reporting 'document'
 
 or
 
