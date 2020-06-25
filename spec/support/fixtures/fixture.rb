@@ -10,9 +10,9 @@ module FixturesFactory
   # end
 
   # payments
-  def call_payments(*args)
+  def call_payments(*args, params)
     FIXTURES[args] ||= TestProf::AnyFixture.register(args) do
-      Services::API::V1::Payments.new.call
+      Services::API::V1::Payments.new.call(params)
     end
   end
 end

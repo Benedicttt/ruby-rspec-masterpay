@@ -1,5 +1,7 @@
 class Schema
+  # @return [Dry::Schema::JSON]
   def payments_403
+
     Dry::Schema.JSON do
       required(:success).filled(:bool).value(eql?: false)
       required(:result).filled(:integer).value(eql?: 1)
@@ -13,5 +15,6 @@ class Schema
         end
       end
     end
+    
   end
 end
