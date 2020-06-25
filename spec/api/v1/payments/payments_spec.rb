@@ -1,15 +1,14 @@
 describe 'MasterPay', feature: 'send post request of payments api' do
   describe 'response' do
     let(:payments) { call_payments('payments') }
-    # let(:payments) { Services::API::V1::Payments.new.call }
-
 
     it 'check result 403' do
       expect(payments.code).to eq 403
     end
 
-    it 'check result 403' do
-      expect(payments.code).to eq 403
+    it 'check schema' do
+      errors = Schema.new.payments_403.call(symbolize(payments.body)).errors.to_h
+      Schema.new.check(errors, payments)
     end
   end
 end

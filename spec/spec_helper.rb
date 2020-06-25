@@ -15,6 +15,12 @@ require 'allure-rspec'
 require 'active_support'
 require 'active_support/core_ext/module'
 require 'test_prof/recipes/rspec/any_fixture'
+require 'colorize'
+require 'dry/schema'
+require 'dry/validation'
+require 'colorize'
+require 'colorized_string'
+require 'ostruct'
 
 Dir['./spec/support/**/**/*.rb',].each { |f| require f }
 

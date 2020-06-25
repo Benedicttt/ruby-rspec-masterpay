@@ -15,8 +15,10 @@ group :test do
   gem 'fuubar'
   gem 'rubocop-rspec'
   gem 'dry-container'
-  gem 'dry-schema'
   gem 'dry-monads', '>= 1.0.0.rc1', require: 'dry/monads/all'
   gem 'allure-rspec'
   gem 'allure-ruby-adaptor-api'
+  gem 'dry-schema'
+  gem 'dry-validation'
+  gem 'colorize'
 end
