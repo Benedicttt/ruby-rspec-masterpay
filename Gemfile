@@ -1,0 +1,22 @@
+source 'https://rubygems.org'
+
+group :test do
+  gem 'dotenv'
+  gem 'json-schema'
+  gem 'net-ssh'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'rest-client'
+  gem 'rspec', '~> 3.7'
+  gem 'rspec-its'
+  gem 'shoulda'
+  gem 'test-prof'
+  gem 'fuubar'
+  gem 'rubocop-rspec'
+  gem 'dry-container'
+  gem 'dry-schema'
+  gem 'dry-monads', '>= 1.0.0.rc1', require: 'dry/monads/all'
+  gem 'allure-rspec'
+  gem 'allure-ruby-adaptor-api'
+end
