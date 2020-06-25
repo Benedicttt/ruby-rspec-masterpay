@@ -3,6 +3,7 @@ module Services
     module V1
       class Payments
 
+        # @param [Object] params
         def call(params)
           params = OpenStruct.new(params)
           header = params.header.nil? ? header_default : params.header.merge(header_default)
