@@ -17,19 +17,15 @@ or
 
     bundle install 
 
-
-* run only once thread (default)
-
+ run only once thread (default)
     
     rspec  
 
-* runninsg parallel tests (CPU)
-    
+ runninsg parallel tests (CPU)
     
     parallel_test spec -t rspec
 
-* running parallel tests, set 10 threads
-    
+ running parallel tests, set 10 threads
 
     parallel_test spec -t rspec -n10 
 *****
