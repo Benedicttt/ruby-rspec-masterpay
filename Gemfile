@@ -21,4 +21,5 @@ group :test do
   gem 'dry-schema'
   gem 'dry-validation'
   gem 'colorize'
+  gem 'parallel_tests', group: [:development, :test]
 end

@@ -1,7 +1,8 @@
 ###### **Native Ruby with RSpec framework example by Sergey Kievskiy**
 
 *****
-**Run command:**
+**Run commands:**
+
 
 $ `docker-compose up -d  masterpay` run container
 
@@ -9,14 +10,28 @@ $ `docker exec -ti masterpay rspec` - run all tests
 
 $ `docker exec -ti masterpay rspec -f d`  - run all tests format reporting 'document'
 
+*****
 or
 
-$ `bundle install` - run this command in cloned project directory
+ run this command in cloned project directory
 
-and
+    bundle install 
 
-$ `rspec` 
 
+* run only once thread (default)
+
+    
+    rspec  
+
+* runninsg parallel tests (CPU)
+    
+    
+    parallel_test spec -t rspec
+
+* running parallel tests, set 10 threads
+    
+
+    parallel_test spec -t rspec -n10 
 *****
 **Recommended:**
 

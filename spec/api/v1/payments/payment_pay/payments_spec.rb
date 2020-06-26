@@ -1,7 +1,7 @@
 describe 'MasterPay', :payment_pay, feature: 'Payment pay' do
 
   describe 'positive response: send params and true auth private key' do
-    let(:response) { call_payments 'positive response', params_for_payments }
+    let(:response) { call_payments 'positive response Payment pay', params_for_payments }
 
     it do
       expect(response.code).to eq 200
@@ -15,7 +15,7 @@ describe 'MasterPay', :payment_pay, feature: 'Payment pay' do
   end
 
   describe 'negative response: send empty params and auth private key' do
-    let(:response) { call_payments 'negative response', {}  }
+    let(:response) { call_payments 'negative response Payment pay 1', {}  }
 
     it 'response 403' do
       expect(response.code).to eq 403
@@ -29,7 +29,7 @@ describe 'MasterPay', :payment_pay, feature: 'Payment pay' do
   end
 
   describe 'negative response: send params without amount' do
-    let(:response) { call_payments 'positive response 2', delete_from_payload(:amount) }
+    let(:response) { call_payments 'neagtive response Payment pay 2', delete_from_payload(:amount) }
     let(:response_strict) { OpenStruct.new symbolize response.body }
 
     it 'response 403' do
@@ -58,7 +58,7 @@ describe 'MasterPay', :payment_pay, feature: 'Payment pay' do
   end
 
   describe 'negative response: send params without currency' do
-    let(:response) { call_payments 'positive response 3', delete_from_payload(:currency) }
+    let(:response) { call_payments 'negative response Payment pay 3', delete_from_payload(:currency) }
     let(:response_strict) { OpenStruct.new symbolize response.body }
 
     it 'response 403' do

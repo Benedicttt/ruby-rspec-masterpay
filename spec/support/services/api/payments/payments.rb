@@ -9,8 +9,6 @@ module Services
           header = params.header.nil? ? header_default : params.header.merge(header_default)
           payload = params.payload.nil? ? {} : params.payload
 
-          puts "#{color(payload.to_s, :blue)}"
-
           RestClient::Request.execute(
             method: :post,
             url: ENV['BASE_URL'] + ENV['PAYMENTS'],
