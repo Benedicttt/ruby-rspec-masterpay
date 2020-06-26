@@ -1,5 +1,5 @@
 class Schema
-  def payments_200
+  def payments_host_to_host_200
 
     Dry::Schema.JSON do
       required(:success).filled(:bool).value(eql?: true)
@@ -16,6 +16,17 @@ class Schema
         required(:status).filled(:string).value(eql?: "init")
       end
 
+      required(:redirectRequest).hash do
+        required(:url).filled(:string).value(eql?: "https://demo.develop.gate.securemasterpay.com/demo/3ds")
+
+        required(:params).hash do
+          required(:PaReq).filled(:string).value(eql?: "TEST_PAREQ_SUCCESS")
+          required(:TermUrl).filled(:string)
+          required(:MD).filled(:string).value(max_size?: 32)
+        end
+
+        required(:type).filled(:string).value(eql?: "post")
+      end
     end
   end
 end

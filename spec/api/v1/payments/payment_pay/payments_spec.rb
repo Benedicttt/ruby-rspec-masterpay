@@ -1,4 +1,4 @@
-describe 'MasterPay', feature: 'send post request of response api' do
+describe 'MasterPay', :payment_pay, feature: 'Payment pay' do
 
   describe 'positive response: send params and true auth private key' do
     let(:response) { call_payments 'positive response', params_for_payments }
@@ -10,7 +10,7 @@ describe 'MasterPay', feature: 'send post request of response api' do
     it 'schema' do
       sym_param = symbolize response.body
       errors = Schema.new.payments_200.call(sym_param).errors.to_h
-      Schema.new.check errors, response
+      Schema.new.check errors, response, params_for_payments
     end
   end
 
@@ -24,7 +24,7 @@ describe 'MasterPay', feature: 'send post request of response api' do
     it 'schema' do
       sym_param = symbolize response.body
       errors = Schema.new.payments_403_hash.call(sym_param).errors.to_h
-      Schema.new.check errors, response
+      Schema.new.check errors, response, {}
     end
   end
 
@@ -39,7 +39,7 @@ describe 'MasterPay', feature: 'send post request of response api' do
     it 'schema' do
       sym_param = symbolize response.body
       errors = Schema.new.payments_403_array.call(sym_param).errors.to_h
-      Schema.new.check errors, response
+      Schema.new.check errors, response, delete_from_payload(:amount)
     end
 
     it 'params error, index 0' do
@@ -68,7 +68,7 @@ describe 'MasterPay', feature: 'send post request of response api' do
     it 'schema' do
       sym_param = symbolize response.body
       errors = Schema.new.payments_403_array.call(sym_param).errors.to_h
-      Schema.new.check errors, response
+      Schema.new.check errors, response, delete_from_payload(:currency)
     end
 
     it 'params error, index 0' do
