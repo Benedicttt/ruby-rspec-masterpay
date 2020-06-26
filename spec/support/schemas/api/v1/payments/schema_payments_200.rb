@@ -9,10 +9,10 @@ class Schema
       required(:processingUrl).filled(:string)
 
       required(:payment).hash do
-        required(:amount).filled(:integer).value(eql?: 1000)
-        required(:gateway_amount).filled(:integer).value(eql?: 1000)
+        required(:amount).filled(:integer).value(eql?: current_amount.to_i)
+        required(:gateway_amount).filled(:integer).value(eql?: current_amount.to_i)
         required(:currency).filled(:string).value(max_size?: 3)
-        required(:currency).filled(:string).value(eql?: "CNY")
+        required(:currency).filled(:string).value(eql?: current_currency)
         required(:status).filled(:string).value(eql?: "init")
       end
     end
