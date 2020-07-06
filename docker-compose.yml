@@ -9,3 +9,16 @@ services:
     restart: always
     volumes:
     - .:/opt/app/
+    depends_on:
+      - server-callback
+
+  server-callback:
+    build:
+      context: ./server-callback
+    container_name: server-callback
+    hostname: server-callback
+    restart: always
+    ports:
+    - 9292:9292
+    volumes:
+      - .:/opt/app/

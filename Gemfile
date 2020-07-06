@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 group :test do
+  gem 'rake'
+  gem 'rakeup'
   gem 'dotenv'
   gem 'json-schema'
   gem 'net-ssh'

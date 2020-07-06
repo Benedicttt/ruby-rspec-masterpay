@@ -11,8 +11,6 @@ $ `docker exec -ti masterpay rspec` - run all tests
 $ `docker exec -ti masterpay rspec -f d`  - run all tests format reporting 'document'
 
 *****
-or
-
  run this command in cloned project directory
 
     bundle install 

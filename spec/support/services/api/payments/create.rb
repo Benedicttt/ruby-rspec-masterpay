@@ -1,7 +1,7 @@
 module Services
   module API
     module V1
-      class Payments
+      class PaymentsCreate
 
         # @param [Object] params
         def call(params)
