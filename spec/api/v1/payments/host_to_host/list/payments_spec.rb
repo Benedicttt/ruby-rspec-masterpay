@@ -2,7 +2,11 @@ describe 'MasterPay', :host_to_host, feature: 'Host to host' do
 
   describe 'positive response: send params and true auth private key' do
     let(:params) { add_param_to_payload params_for_card }
-    let(:response) { call_payments_list 'positive response Host to host 1', params }
+
+    let(:response) do
+      call_payments_create 'positive response Host to host 1', params
+      call_payments_list 'positive response Host to host get list', params
+    end
 
     it do
       expect(response.code).to eq 200
