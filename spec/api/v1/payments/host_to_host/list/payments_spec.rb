@@ -5,7 +5,6 @@ describe 'MasterPay', :host_to_host, feature: 'Host to host' do
     let(:response) { call_payments_list 'positive response Host to host 1', params }
 
     it do
-      puts response.body
       expect(response.code).to eq 200
     end
 

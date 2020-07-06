@@ -1,0 +1,12 @@
+Run options: include {:focus=>true}
+
+All examples were filtered out; ignoring {:focus=>true}
+spec/api/v1/payments/host_to_host/list/payments_spec.rb:0.13197300001047552
+Run options: include {:focus=>true}
+
+All examples were filtered out; ignoring {:focus=>true}
+spec/api/v1/payments/payment_pay/create/payments_spec.rb:1.0086650000012014
+Run options: include {:focus=>true}
+
+All examples were filtered out; ignoring {:focus=>true}
+spec/api/v1/payments/host_to_host/create/payments_spec.rb:1.9769679999735672
