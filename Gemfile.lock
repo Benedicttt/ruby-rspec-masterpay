@@ -67,6 +67,7 @@ GEM
     fuubar (2.3.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
+    hash_dot (2.4.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.5)
@@ -170,6 +171,7 @@ DEPENDENCIES
   dry-schema
   dry-validation
   fuubar
+  hash_dot
   json-schema
   net-ssh
   parallel_tests

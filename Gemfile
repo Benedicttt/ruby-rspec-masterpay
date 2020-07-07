@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :test do
+  gem 'hash_dot'
   gem 'rake'
   gem 'rakeup'
   gem 'dotenv'

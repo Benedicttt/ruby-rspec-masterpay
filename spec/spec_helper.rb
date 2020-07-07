@@ -21,6 +21,7 @@ require 'dry/validation'
 require 'colorize'
 require 'colorized_string'
 require 'ostruct'
+require 'hash_dot'
 
 Dir['./spec/support/**/**/*.rb',].each { |f| require f }
 

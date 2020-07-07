@@ -16,3 +16,18 @@ def params_for_payments
     }
   }
 end
+
+def params_for_payments_list
+  {
+    header: { Authorization: merchant_private_key },
+    payload: {
+      date_from: Time.now.strftime('%Y-%d-%m'),
+      page: 1,
+      per_page: 1
+    }
+  }
+end
+
+def common_header
+  { Authorization: merchant_private_key }
+end
