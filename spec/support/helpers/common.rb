@@ -42,6 +42,10 @@ def add_param_to_payload(param)
   params_for_payments.tap { |hs| hs[:payload].merge!(param) }
 end
 
+def add_param_to_payload_refunds(param)
+  params_for_payments_refunds.tap { |hs| hs[:payload].merge!(param) }
+end
+
 def secure_random
   SecureRandom.hex(200)
 end

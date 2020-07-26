@@ -28,6 +28,16 @@ def params_for_payments_list
   }
 end
 
+def params_for_payments_refunds
+  {
+    header: { Authorization: merchant_private_key },
+    payload: {
+      token: '',
+      amount: ENV['AMOUNT']
+    }
+  }
+end
+
 def common_header
   { Authorization: merchant_private_key }
 end
