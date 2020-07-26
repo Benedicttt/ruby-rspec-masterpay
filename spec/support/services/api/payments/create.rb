@@ -6,7 +6,7 @@ module Services
         # @param [Object] params
         def call(params)
 
-          header = params.dig(:header).nil? ? header_default : params.dig(:header).merge(header_default)
+          header = params.dig(:header).nil? ? header_default : params.dig(:header).merge!(header_default)
           payload = params.dig(:payload).nil? ? {} : params.dig(:payload)
           url = ENV['BASE_URL'] + ENV['PAYMENTS']
 

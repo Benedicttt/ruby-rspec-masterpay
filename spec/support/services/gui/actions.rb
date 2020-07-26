@@ -2,7 +2,7 @@ require 'selenium-webdriver'
 
 class Driver
   def options_chrome
-    Selenium::WebDriver::Chrome::Options.new(args: %w[disable-gpu no-sandbox --headless])
+    Selenium::WebDriver::Chrome::Options.new(args: %w[disable-gpu no-sandbox ])
   end
 
   def chrome
@@ -18,12 +18,12 @@ class Actions
     # Go to url processing
     driver.get(url)
     driver.find_element(:css, approve).click
-    sleep 0.5
+    sleep 1
 
     # Finish approve to browser
     driver.get(url)
     driver.find_element(:css, confirm).click
-    sleep 0.5
+    sleep 1
 
     driver.close
     driver.quit
@@ -35,12 +35,12 @@ class Actions
     # Go to url processing
     driver.get(url)
     driver.find_element(:css, decline).click
-    sleep 0.5
+    sleep 1
 
     # Finish decline to browser
     driver.get(url)
     driver.find_element(:css, confirm).click
-    sleep 0.5
+    sleep 1
 
     driver.close
     driver.quit

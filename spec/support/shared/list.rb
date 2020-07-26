@@ -1,5 +1,8 @@
 shared_examples :list_param do |date, fixture_number, name_variable_response|
-  let(:params_with_date) { params_for_payments_list.merge( { payload: { date_from: date } } ) }
+  let(:params_with_date) do
+    params_for_payments_list.merge(payload: {:date_from => date})
+  end
+
   let(:params_with_card) { add_param_to_payload params_for_card }
 
   let(:params) { !date.nil? ? params_with_date : params_with_card }
