@@ -22,6 +22,12 @@ module FixturesFactory
     end
   end
 
+  def call_payments_refunds(*args, token)
+    FIXTURES[args] ||= TestProf::AnyFixture.register(args) do
+      Services::API::V1::PaymentsRefunds.new.call(token)
+    end
+  end
+
   # def self.fixture(*args, currency, amount)
   #   FIXTURES.fetch(*args) do
   #     Services::Invoices::Create::V2.new.call(currency, amount)

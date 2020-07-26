@@ -1,18 +1,16 @@
 module Services
   module API
     module V1
-      class PaymentsList
+      class PaymentsRefunds
 
         # @param [Object] params
         def call(params)
-
           header = params.dig(:header).nil? ? header_default : params.dig(:header).merge(header_default)
           payload = params.dig(:payload).nil? ? {} : params.dig(:payload)
           url = ENV['BASE_URL'] + ENV['PAYMENTS']
           # puts header
           # puts payload
           # puts 'Host: ' + url
-
 
           RestClient::Request.execute(
             method: :get,

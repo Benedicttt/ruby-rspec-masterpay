@@ -8,7 +8,7 @@ describe 'MasterPay', :host_to_host, feature: 'Host to host, Payments Get' do
 
     # How set name variable response, so we call it
     let(:token_last_payments) { response_payment_get_to_dot.payments.last.token }
-    let!(:response) { call_payments_get secure_random, token_last_payments }
+    let!(:response) { call_payments_get "get 1", token_last_payments }
 
     it { expect(response.code).to eq 200 }
 
@@ -26,7 +26,7 @@ describe 'MasterPay', :host_to_host, feature: 'Host to host, Payments Get' do
 
     # How set name variable response, so we call it
     let(:token_last_payments) { response_payment_get_to_dot.payments.last.token + 1.to_s }
-    let!(:response) { call_payments_get secure_random, token_last_payments }
+    let!(:response) { call_payments_get "get 2", token_last_payments }
     let!(:response_to_dot) { JSON.parse(response.body).to_dot }
 
     it { expect(response.code).to eq 403 }

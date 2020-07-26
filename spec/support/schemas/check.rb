@@ -1,7 +1,7 @@
 class Schema
   def check(errors, response, params)
     unless errors.empty?
-      print "\n\n#{color("Params with request:\n" + params.to_s, 'green')}"
+      print "#{color("Params with request:\n" + params.to_s, 'green')}"
       print "\n#{color("In response:\n" + response, 'yellow')}, \nparams:"
       response = OpenStruct.new(symbolize response.body)
 

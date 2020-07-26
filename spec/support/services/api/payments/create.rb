@@ -5,13 +5,18 @@ module Services
 
         # @param [Object] params
         def call(params)
-          params = OpenStruct.new(params)
-          header = params.header.nil? ? header_default : params.header.merge(header_default)
-          payload = params.payload.nil? ? {} : params.payload
+
+          header = params.dig(:header).nil? ? header_default : params.dig(:header).merge(header_default)
+          payload = params.dig(:payload).nil? ? {} : params.dig(:payload)
+          url = ENV['BASE_URL'] + ENV['PAYMENTS']
+
+          # puts header
+          # puts payload
+          # puts 'Host: ' + url
 
           RestClient::Request.execute(
             method: :post,
-            url: ENV['BASE_URL'] + ENV['PAYMENTS'],
+            url: url,
             headers: header,
             payload: payload
           ) { |response| response }
